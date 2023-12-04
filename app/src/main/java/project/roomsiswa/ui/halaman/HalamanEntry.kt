@@ -23,6 +23,7 @@ import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.lifecycle.viewmodel.compose.viewModel
+import kotlinx.coroutines.launch
 import project.roomsiswa.R
 import project.roomsiswa.model.DetailSiswa
 import project.roomsiswa.model.EntryViewModel
@@ -60,7 +61,7 @@ fun EntrySiswaScreen(
             uiStateSiswa = viewModel.uiStateSiswa,
             onSiswaValueChange = viewModel::updateUiState,
             onSaveClick = {
-                coroutinScope.Launch {
+                coroutinScope.launch {
                     viewModel.saveSiswa()
                     navigateBack()
                 }
