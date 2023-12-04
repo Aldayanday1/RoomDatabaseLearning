@@ -118,6 +118,14 @@ fun ListSiswa(
     }
 }
 
+@Composable
+fun DataSiswa(
+    siswa: Siswa,
+    modifier: Modifier = Modifier
+){
+
+}
+
 
 
 
