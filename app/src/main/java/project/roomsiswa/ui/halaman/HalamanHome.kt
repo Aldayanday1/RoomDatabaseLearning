@@ -1,5 +1,6 @@
 package project.roomsiswa.ui.halaman
 
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
@@ -13,14 +14,17 @@ import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.viewmodel.compose.viewModel
 import project.roomsiswa.R
+import project.roomsiswa.data.Siswa
 import project.roomsiswa.model.HomeViewModel
 import project.roomsiswa.model.PenyediaViewModel
+import project.roomsiswa.model.UIStateSiswa
 import project.roomsiswa.navigasi.DestinasiNavigasi
 
 object DestinasiHome : DestinasiNavigasi{
@@ -67,5 +71,17 @@ fun HomeScreen(
                 .padding(innerPadding)
                 .fillMaxSize()
         )
+    }
+}
+
+@Composable
+fun BodyHome(
+    itemSiswa: List<Siswa>,
+    modifier: Modifier=Modifier){
+    Column(
+        horizontalAlignment = Alignment.CenterHorizontally,
+        modifier = modifier
+    ){
+
     }
 }
