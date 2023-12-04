@@ -135,5 +135,13 @@ fun FormInputSiswa(
             enabled = enabled,
             singleLine = true
         )
+
+        if (enabled){
+            Text(
+                text = stringResource(R.string.required_field),
+                modifier = Modifier.padding(start = dimensionResource(id = R.dimen.padding_medium))
+            )
+        }
+
     }
 }
