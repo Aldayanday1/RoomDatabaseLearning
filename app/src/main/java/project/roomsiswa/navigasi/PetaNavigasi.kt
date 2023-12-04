@@ -14,8 +14,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavController
 import androidx.navigation.NavHostController
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import project.roomsiswa.R
+import project.roomsiswa.ui.halaman.DestinasiEntry
+import project.roomsiswa.ui.halaman.DestinasiHome
+import project.roomsiswa.ui.halaman.EntrySiswaScreen
+import project.roomsiswa.ui.halaman.HomeScreen
 
 @Composable
 fun SiswaApp(navController: NavHostController = rememberNavController()){
@@ -45,4 +51,22 @@ fun SiswaTopAppBar(
             }
         }
     )
+}
+
+@Composable
+fun HostNavigasi(
+    navController: NavHostController,
+    modifier: Modifier = Modifier
+){
+    NavHost(navController=navController, startDestination = DestinasiHome.route, modifier)
+    {
+        composable(DestinasiHome.route){
+            HomeScreen(
+                navigateToItemEntry = {navController.navigate(DestinasiEntry.route)},
+            )
+        }
+        composable(DestinasiEntry.route){
+            EntrySiswaScreen(navigateBack = { navController.popBackStack()})
+        }
+    }
 }

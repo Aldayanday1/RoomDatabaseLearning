@@ -29,6 +29,7 @@ import project.roomsiswa.model.EntryViewModel
 import project.roomsiswa.model.PenyediaViewModel
 import project.roomsiswa.model.UIStateSiswa
 import project.roomsiswa.navigasi.DestinasiNavigasi
+import project.roomsiswa.navigasi.SiswaTopAppBar
 import project.roomsiswa.ui.halaman.DestinasiEntry.titleRes
 
 object DestinasiEntry: DestinasiNavigasi {
