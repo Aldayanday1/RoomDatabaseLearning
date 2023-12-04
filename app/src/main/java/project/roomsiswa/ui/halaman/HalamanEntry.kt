@@ -28,9 +28,10 @@ import project.roomsiswa.model.DetailSiswa
 import project.roomsiswa.model.EntryViewModel
 import project.roomsiswa.model.PenyediaViewModel
 import project.roomsiswa.model.UIStateSiswa
+import project.roomsiswa.navigasi.DestinasiNavigasi
 import project.roomsiswa.ui.halaman.DestinasiEntry.titleRes
 
-object DestinasiEntry: DestinasiEntry {
+object DestinasiEntry: DestinasiNavigasi {
     override val route = "item_entry"
     override val titleRes = R.string.entry_siswa
 }
@@ -48,13 +49,12 @@ fun EntrySiswaScreen(
         modifier = modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
         topBar = {
             SiswaTopAppBar(
-                title = stringResource(DestinasiEntry,titleRes),
+                title = stringResource(DestinasiEntry.titleRes),
                 canNavigateBack = true,
                 scrollBehavior = scrollBehavior
             )
         }
-    ){
-        innerPadding ->
+    ){ innerPadding ->
         EntrySiswaBody(
             uiStateSiswa = viewModel.uiStateSiswa,
             onSiswaValueChange = viewModel::updateUiState,
