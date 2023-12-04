@@ -14,8 +14,10 @@ import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.viewmodel.compose.viewModel
 import project.roomsiswa.R
+import project.roomsiswa.model.DetailSiswa
 import project.roomsiswa.model.EntryViewModel
 import project.roomsiswa.model.PenyediaViewModel
+import project.roomsiswa.model.UIStateSiswa
 import project.roomsiswa.ui.halaman.DestinasiEntry.titleRes
 
 object DestinasiEntry: DestinasiEntry {
@@ -58,4 +60,14 @@ fun EntrySiswaScreen(
                 .fillMaxWidth()
         )
     }
+}
+
+@Composable
+fun EntrySiswaBody(
+    uiStateSiswa: UIStateSiswa,
+    onSiswaValueChange: (DetailSiswa) -> Unit,
+    onSaveClick: () -> Unit,
+    modifier: Modifier = Modifier
+){
+
 }
