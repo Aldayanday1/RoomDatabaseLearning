@@ -38,6 +38,16 @@ fun EntrySiswaScreen(
             )
         }
     ){
-
+        innerPadding ->
+        EntrySiswaBody(
+            uiStateSiswa = viewModel.uiStateSiswa,
+            onSiswaValueChange = viewModel::updateUiState,
+            onSaveClick = {
+                coroutinScope.Launch {
+                    viewModel.saveSiswa()
+                    navigateBack()
+                }
+            }
+        )
     }
 }
